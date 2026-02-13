@@ -2,10 +2,22 @@
 
 [![npm version](https://img.shields.io/npm/v/ts-result-type)](https://www.npmjs.com/package/ts-result-type)
 [![npm downloads](https://img.shields.io/npm/dm/ts-result-type)](https://www.npmjs.com/package/ts-result-type)
-[![license](https://img.shields.io/npm/l/ts-result-type)](https://github.com/ofershap/ts-result/blob/main/LICENSE)
 [![CI](https://github.com/ofershap/ts-result/actions/workflows/ci.yml/badge.svg)](https://github.com/ofershap/ts-result/actions/workflows/ci.yml)
+[![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue.svg)](https://www.typescriptlang.org/)
+[![license](https://img.shields.io/npm/l/ts-result-type)](https://github.com/ofershap/ts-result/blob/main/LICENSE)
 
-Rust-style `Result<T, E>` for TypeScript. Type-safe error handling without try/catch. Zero dependencies. ~900 bytes.
+Rust-style `Result<T, E>` for TypeScript — errors become part of the return type, not invisible exceptions. ~900 bytes.
+
+```ts
+function divide(a: number, b: number): Result<number, string> {
+  if (b === 0) return Err("division by zero");
+  return Ok(a / b);
+}
+
+const result = divide(10, 0);
+if (result.ok) console.log(result.value); // typed as number
+else console.log(result.error);           // typed as string
+```
 
 ![Demo](assets/demo.gif)
 
@@ -98,12 +110,6 @@ const data = await fromPromise(
 - **Exhaustive handling** — TypeScript ensures you handle both cases
 - **Composable** — chain operations with `map`, `flatMap`, `match`
 - **Explicit** — no hidden control flow, no forgotten catch blocks
-
-## Other Projects
-
-- [ts-nano-event](https://github.com/ofershap/ts-nano-event) — Typed event emitter in <200 bytes
-- [spotlight-card](https://github.com/ofershap/spotlight-card) — Animated spotlight card for React
-- [use-stepper](https://github.com/ofershap/use-stepper) — React hook for multi-step forms
 
 ## License
 
