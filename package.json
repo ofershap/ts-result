@@ -1,0 +1,60 @@
+{
+  "name": "ts-result-type",
+  "version": "0.0.0-development",
+  "description": "Rust-style Result<T, E> for TypeScript — type-safe error handling without try/catch",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "result",
+    "rust",
+    "error-handling",
+    "typescript",
+    "type-safe",
+    "ok",
+    "err",
+    "monad",
+    "functional",
+    "zero-dependency"
+  ],
+  "author": "Ofer Shapira <ofer@ofershap.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ofershap/ts-result.git"
+  },
+  "homepage": "https://github.com/ofershap/ts-result",
+  "devDependencies": {
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0",
+    "typescript-eslint": "^8.0.0",
+    "vitest": "^3.0.0"
+  }
+}
