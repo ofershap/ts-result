@@ -1,6 +1,6 @@
 {
-  "name": "ts-result-type",
-  "version": "0.0.0-development",
+  "name": "ts-result-monad",
+  "version": "1.0.0",
   "description": "Rust-style Result<T, E> for TypeScript — type-safe error handling without try/catch",
   "type": "module",
   "exports": {
