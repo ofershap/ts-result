@@ -15,8 +15,9 @@ function divide(a: number, b: number): Result<number, string> {
 }
 
 const result = divide(10, 0);
-if (result.ok) console.log(result.value); // typed as number
-else console.log(result.error);           // typed as string
+if (result.ok)
+  console.log(result.value); // typed as number
+else console.log(result.error); // typed as string
 ```
 
 ![Demo](assets/demo.gif)
@@ -83,26 +84,26 @@ const data = await fromPromise(
 
 ### Constructors
 
-| Function | Description |
-|----------|-------------|
-| `Ok(value)` | Create a success result |
-| `Err(error)` | Create an error result |
-| `fromThrowable(fn, mapErr?)` | Wrap a function that might throw |
+| Function                        | Description                      |
+| ------------------------------- | -------------------------------- |
+| `Ok(value)`                     | Create a success result          |
+| `Err(error)`                    | Create an error result           |
+| `fromThrowable(fn, mapErr?)`    | Wrap a function that might throw |
 | `fromPromise(promise, mapErr?)` | Wrap a promise that might reject |
 
 ### Static Methods
 
-| Method | Description |
-|--------|-------------|
-| `Result.map(result, fn)` | Transform the Ok value |
-| `Result.mapErr(result, fn)` | Transform the Err value |
-| `Result.flatMap(result, fn)` | Chain Result-returning functions |
-| `Result.unwrap(result)` | Extract value or throw |
-| `Result.unwrapOr(result, default)` | Extract value or use default |
-| `Result.unwrapErr(result)` | Extract error or throw |
-| `Result.match(result, { ok, err })` | Pattern match on result |
-| `Result.isOk(result)` | Type guard for Ok (narrows type) |
-| `Result.isErr(result)` | Type guard for Err (narrows type) |
+| Method                              | Description                       |
+| ----------------------------------- | --------------------------------- |
+| `Result.map(result, fn)`            | Transform the Ok value            |
+| `Result.mapErr(result, fn)`         | Transform the Err value           |
+| `Result.flatMap(result, fn)`        | Chain Result-returning functions  |
+| `Result.unwrap(result)`             | Extract value or throw            |
+| `Result.unwrapOr(result, default)`  | Extract value or use default      |
+| `Result.unwrapErr(result)`          | Extract error or throw            |
+| `Result.match(result, { ok, err })` | Pattern match on result           |
+| `Result.isOk(result)`               | Type guard for Ok (narrows type)  |
+| `Result.isErr(result)`              | Type guard for Err (narrows type) |
 
 ## Why Not Try/Catch?
 
