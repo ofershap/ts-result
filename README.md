@@ -1,4 +1,4 @@
-# ts-result
+# ts-result — Rust-Style Result&lt;T, E&gt; for TypeScript
 
 [![npm version](https://img.shields.io/npm/v/ts-result-type)](https://www.npmjs.com/package/ts-result-type)
 [![npm downloads](https://img.shields.io/npm/dm/ts-result-type)](https://www.npmjs.com/package/ts-result-type)
@@ -6,7 +6,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-strict-blue.svg)](https://www.typescriptlang.org/)
 [![license](https://img.shields.io/npm/l/ts-result-type)](https://github.com/ofershap/ts-result/blob/main/LICENSE)
 
-Rust-style `Result<T, E>` for TypeScript — errors become part of the return type, not invisible exceptions. ~900 bytes.
+Rust-style `Result<T, E>` for TypeScript — type-safe error handling where errors become part of the return type, not invisible exceptions. ~900 bytes, zero dependencies.
 
 ```ts
 function divide(a: number, b: number): Result<number, string> {
@@ -20,7 +20,7 @@ if (result.ok)
 else console.log(result.error); // typed as string
 ```
 
-![Demo](assets/demo.gif)
+![ts-result demo — Ok and Err type narrowing with TypeScript autocomplete](assets/demo.gif)
 
 ## Install
 
